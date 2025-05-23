@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import "../styles/section.css";
 
-const Education = ({ onEducationChange }) => {
+const Education = ({ onEducationChange, isExpanded, toggleExpanded }) => {
   const [education, setEducation] = useState({
     school: "",
     study: "",
@@ -18,30 +19,36 @@ const Education = ({ onEducationChange }) => {
   };
 
   return (
-    <div className="card">
-      <form>
-        <input
-          type="text"
-          name="school"
-          value={education.school}
-          onChange={handleChange}
-          placeholder="School"
-        />
-        <input
-          type="text"
-          name="study"
-          value={education.study}
-          onChange={handleChange}
-          placeholder="Study"
-        />
-        <input
-          type="date"
-          name="date"
-          value={education.date}
-          onChange={handleChange}
-          placeholder="Date"
-        />
-      </form>
+    <div className={`card ${isExpanded ? "expanded" : ""}`}>
+      <div className="card-header" onClick={toggleExpanded}>
+        <h3>Education</h3>
+        <span className="toggle-icon">{isExpanded ? "▼" : "▶"}</span>
+      </div>
+      {isExpanded && (
+        <form>
+          <input
+            type="text"
+            name="school"
+            value={education.school}
+            onChange={handleChange}
+            placeholder="School"
+          />
+          <input
+            type="text"
+            name="study"
+            value={education.study}
+            onChange={handleChange}
+            placeholder="Study"
+          />
+          <input
+            type="date"
+            name="date"
+            value={education.date}
+            onChange={handleChange}
+            placeholder="Date"
+          />
+        </form>
+      )}
     </div>
   );
 };

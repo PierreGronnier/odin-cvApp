@@ -1,49 +1,68 @@
 import React from "react";
+import "../styles/CVDisplay.css";
 
 const CVDisplay = ({ info, education, experience }) => {
   return (
     <div className="cv-display">
-      <h2>General Information</h2>
-      <p>
-        <strong>Name:</strong> {info.name}
-      </p>
-      <p>
-        <strong>Email:</strong> {info.email}
-      </p>
-      <p>
-        <strong>Phone:</strong> {info.phone}
-      </p>
-      <p>
-        <strong>Address:</strong> {info.address}
-      </p>
+      <div className="cv-section">
+        <h2>General Information</h2>
+        <p className="cv-entry">
+          <span className="cv-label">Name:</span>{" "}
+          <span className="cv-value">{info.name}</span>
+        </p>
+        <p className="cv-entry">
+          <span className="cv-label">Email:</span>{" "}
+          <span className="cv-value">{info.email}</span>
+        </p>
+        <p className="cv-entry">
+          <span className="cv-label">Phone:</span>{" "}
+          <span className="cv-value">{info.phone}</span>
+        </p>
+        <p className="cv-entry">
+          <span className="cv-label">Address:</span>{" "}
+          <span className="cv-value">{info.address}</span>
+        </p>
+      </div>
 
-      <h2>Education</h2>
-      <p>
-        <strong>School:</strong> {education.school}
-      </p>
-      <p>
-        <strong>Study:</strong> {education.study}
-      </p>
-      <p>
-        <strong>Date:</strong> {education.date}
-      </p>
+      <div className="cv-section">
+        <h2>Education</h2>
+        <p className="cv-entry">
+          <span className="cv-label">School:</span>{" "}
+          <span className="cv-value">{education.school}</span>
+        </p>
+        <p className="cv-entry">
+          <span className="cv-label">Study:</span>{" "}
+          <span className="cv-value">{education.study}</span>
+        </p>
+        <p className="cv-entry">
+          <span className="cv-label">Date:</span>{" "}
+          <span className="cv-value">{education.date}</span>
+        </p>
+      </div>
 
-      <h2>Practical Experience</h2>
-      <p>
-        <strong>Company:</strong> {experience.company}
-      </p>
-      <p>
-        <strong>Position:</strong> {experience.position}
-      </p>
-      <p>
-        <strong>Responsibilities:</strong> {experience.responsibilities}
-      </p>
-      <p>
-        <strong>From:</strong> {experience.from}
-      </p>
-      <p>
-        <strong>To:</strong> {experience.to}
-      </p>
+      <div className="cv-section">
+        <h2>Practical Experience</h2>
+        <p className="cv-entry">
+          <span className="cv-label">Company:</span>{" "}
+          <span className="cv-value">{experience.company}</span>
+        </p>
+        <p className="cv-entry">
+          <span className="cv-label">Position:</span>{" "}
+          <span className="cv-value">{experience.position}</span>
+        </p>
+        <p className="cv-entry">
+          <span className="cv-label">Responsibilities:</span>{" "}
+          <span className="cv-value">{experience.responsibilities}</span>
+        </p>
+        <p className="cv-entry">
+          <span className="cv-label">From:</span>{" "}
+          <span className="cv-value">{experience.from}</span>
+        </p>
+        <p className="cv-entry">
+          <span className="cv-label">To:</span>{" "}
+          <span className="cv-value">{experience.to}</span>
+        </p>
+      </div>
     </div>
   );
 };

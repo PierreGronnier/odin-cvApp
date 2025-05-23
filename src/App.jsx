@@ -27,12 +27,29 @@ const App = () => {
     to: "",
   });
 
+  const [expandedSection, setExpandedSection] = useState("general");
+  const toggleSection = (section) => {
+    setExpandedSection(expandedSection === section ? null : section);
+  };
+
   return (
     <div className="App">
       <div className="form-container">
-        <GeneralInfo onInfoChange={setInfo} />
-        <Education onEducationChange={setEducation} />
-        <PracticalExperience onExperienceChange={setExperience} />
+        <GeneralInfo
+          onInfoChange={setInfo}
+          isExpanded={expandedSection === "general"}
+          toggleExpanded={() => toggleSection("general")}
+        />
+        <Education
+          onEducationChange={setEducation}
+          isExpanded={expandedSection === "education"}
+          toggleExpanded={() => toggleSection("education")}
+        />
+        <PracticalExperience
+          onExperienceChange={setExperience}
+          isExpanded={expandedSection === "experience"}
+          toggleExpanded={() => toggleSection("experience")}
+        />
       </div>
       <div className="preview-container">
         <CVDisplay info={info} education={education} experience={experience} />

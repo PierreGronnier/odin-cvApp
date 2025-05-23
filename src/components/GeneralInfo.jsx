@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import "../styles/section.css";
 
-const GeneralInfo = ({ onInfoChange }) => {
+const GeneralInfo = ({ onInfoChange, isExpanded, toggleExpanded }) => {
   const [info, setInfo] = useState({
     name: "",
     email: "",
@@ -19,37 +20,43 @@ const GeneralInfo = ({ onInfoChange }) => {
   };
 
   return (
-    <div className="card">
-      <form>
-        <input
-          type="text"
-          name="name"
-          value={info.name}
-          onChange={handleChange}
-          placeholder="Name"
-        />
-        <input
-          type="email"
-          name="email"
-          value={info.email}
-          onChange={handleChange}
-          placeholder="Email"
-        />
-        <input
-          type="tel"
-          name="phone"
-          value={info.phone}
-          onChange={handleChange}
-          placeholder="Téléphone"
-        />
-        <input
-          type="text"
-          name="address"
-          value={info.address}
-          onChange={handleChange}
-          placeholder="Address"
-        />
-      </form>
+    <div className={`card ${isExpanded ? "expanded" : ""}`}>
+      <div className="card-header" onClick={toggleExpanded}>
+        <h3>Informations Générales</h3>
+        <span className="toggle-icon">{isExpanded ? "▼" : "▶"}</span>
+      </div>
+      {isExpanded && (
+        <form>
+          <input
+            type="text"
+            name="name"
+            value={info.name}
+            onChange={handleChange}
+            placeholder="Name"
+          />
+          <input
+            type="email"
+            name="email"
+            value={info.email}
+            onChange={handleChange}
+            placeholder="Email"
+          />
+          <input
+            type="tel"
+            name="phone"
+            value={info.phone}
+            onChange={handleChange}
+            placeholder="Téléphone"
+          />
+          <input
+            type="text"
+            name="address"
+            value={info.address}
+            onChange={handleChange}
+            placeholder="Address"
+          />
+        </form>
+      )}
     </div>
   );
 };

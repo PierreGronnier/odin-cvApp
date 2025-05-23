@@ -1,47 +1,29 @@
 .App {
   display: flex;
-  font-family: Arial, sans-serif;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f4f4f9;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+  flex-grow: 1;
 }
 
 .form-container {
-  flex: 60%;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex: 1;
+  width: 50%;
+  max-width: 700px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
 }
 
 .preview-container {
-  flex: 40%;
-  padding: 20px;
+  flex: 1;
+  width: 50%;
+  max-width: 700px;
   background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.card {
-  background: white;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-input,
-textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-h2 {
-  margin-top: 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  color: #333;
+  min-height: 90vh;
 }
