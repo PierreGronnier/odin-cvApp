@@ -3,9 +3,9 @@ import "../styles/section.css";
 
 const Education = ({ onEducationChange, isExpanded, toggleExpanded }) => {
   const [education, setEducation] = useState({
-    school: "",
-    study: "",
-    date: "",
+    school: "University of California",
+    study: "Computer Science",
+    date: "2015 - 2019",
   });
 
   const handleChange = (e) => {
@@ -41,7 +41,7 @@ const Education = ({ onEducationChange, isExpanded, toggleExpanded }) => {
             placeholder="Study"
           />
           <input
-            type="date"
+            type="text"
             name="date"
             value={education.date}
             onChange={handleChange}

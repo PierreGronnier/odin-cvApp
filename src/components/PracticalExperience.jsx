@@ -7,11 +7,11 @@ const PracticalExperience = ({
   toggleExpanded,
 }) => {
   const [experience, setExperience] = useState({
-    company: "",
-    position: "",
-    responsibilities: "",
-    from: "",
-    to: "",
+    company: "Tech Solutions Inc.",
+    position: "Full Stack Developer",
+    responsibilities: "Developing web applications, managing databases",
+    from: "2020",
+    to: "2023",
   });
 
   const handleChange = (e) => {
@@ -53,18 +53,18 @@ const PracticalExperience = ({
             placeholder="Responsibilities"
           />
           <input
-            type="date"
+            type="text"
             name="from"
             value={experience.from}
             onChange={handleChange}
-            placeholder="From"
+            placeholder="Start date"
           />
           <input
-            type="date"
+            type="text"
             name="to"
             value={experience.to}
             onChange={handleChange}
-            placeholder="To"
+            placeholder="End date"
           />
         </form>
       )}

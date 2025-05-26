@@ -7,24 +7,24 @@ import CVDisplay from "./components/CVDisplay";
 
 const App = () => {
   const [info, setInfo] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    address: "",
+    name: "John Doe",
+    email: "johndoe@gmail.com",
+    phone: "555-1234",
+    address: "4211 Spenard Rd, Anchorage, Alaska",
   });
 
   const [education, setEducation] = useState({
-    school: "",
-    study: "",
-    date: "",
+    school: "University of California",
+    study: "Computer Science",
+    date: "2015 - 2019",
   });
 
   const [experience, setExperience] = useState({
-    company: "",
-    position: "",
-    responsibilities: "",
-    from: "",
-    to: "",
+    company: "Tech Solutions Inc.",
+    position: "Full Stack Developer",
+    responsibilities: "Developing web applications, managing databases",
+    from: "2020",
+    to: "2023",
   });
 
   const [expandedSection, setExpandedSection] = useState("general");
@@ -36,16 +36,19 @@ const App = () => {
     <div className="App">
       <div className="form-container">
         <GeneralInfo
+          info={info}
           onInfoChange={setInfo}
           isExpanded={expandedSection === "general"}
           toggleExpanded={() => toggleSection("general")}
         />
         <Education
+          education={education}
           onEducationChange={setEducation}
           isExpanded={expandedSection === "education"}
           toggleExpanded={() => toggleSection("education")}
         />
         <PracticalExperience
+          experience={experience}
           onExperienceChange={setExperience}
           isExpanded={expandedSection === "experience"}
           toggleExpanded={() => toggleSection("experience")}
