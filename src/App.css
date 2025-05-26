@@ -27,3 +27,19 @@
   color: #333;
   min-height: 90vh;
 }
+
+.reset-button {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #ff6b6b;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: #fa5252;
+}

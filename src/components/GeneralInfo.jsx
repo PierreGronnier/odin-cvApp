@@ -1,21 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/section.css";
 
-const GeneralInfo = ({ onInfoChange, isExpanded, toggleExpanded }) => {
-  const [info, setInfo] = useState({
-    name: "John Doe",
-    email: "johndoe@gmail.com",
-    phone: "555-1234",
-    address: "4211 Spenard Rd,	Anchorage, Alaska",
-  });
-
+const GeneralInfo = ({ info, onInfoChange, isExpanded, toggleExpanded }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     const newInfo = {
       ...info,
       [name]: value,
     };
-    setInfo(newInfo);
     onInfoChange(newInfo);
   };
 

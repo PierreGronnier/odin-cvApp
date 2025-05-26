@@ -1,26 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/section.css";
 
 const PracticalExperience = ({
+  experience,
   onExperienceChange,
   isExpanded,
   toggleExpanded,
 }) => {
-  const [experience, setExperience] = useState({
-    company: "Tech Solutions Inc.",
-    position: "Full Stack Developer",
-    responsibilities: "Developing web applications, managing databases",
-    from: "2020",
-    to: "2023",
-  });
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     const newExperience = {
       ...experience,
       [name]: value,
     };
-    setExperience(newExperience);
     onExperienceChange(newExperience);
   };
 

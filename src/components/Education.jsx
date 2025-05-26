@@ -1,20 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/section.css";
 
-const Education = ({ onEducationChange, isExpanded, toggleExpanded }) => {
-  const [education, setEducation] = useState({
-    school: "University of California",
-    study: "Computer Science",
-    date: "2015 - 2019",
-  });
-
+const Education = ({
+  education,
+  onEducationChange,
+  isExpanded,
+  toggleExpanded,
+}) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     const newEducation = {
       ...education,
       [name]: value,
     };
-    setEducation(newEducation);
     onEducationChange(newEducation);
   };
 
