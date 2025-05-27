@@ -14,7 +14,7 @@ const GeneralInfo = ({ info, onInfoChange, isExpanded, toggleExpanded }) => {
   return (
     <div className={`card ${isExpanded ? "expanded" : ""}`}>
       <div className="card-header" onClick={toggleExpanded}>
-        <h3>Informations Générales</h3>
+        <h3>General Informations</h3>
         <span className="toggle-icon">{isExpanded ? "▼" : "▶"}</span>
       </div>
       {isExpanded && (
