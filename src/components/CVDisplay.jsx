@@ -25,7 +25,7 @@ const CVDisplay = ({ info, education, experience }) => {
       </section>
 
       <section className="cv-section">
-        <h2>Professional experience</h2>
+        <h2>Professional Experience</h2>
         <div className="section-content">
           <div className="entry">
             <div className="entry-header">
@@ -36,8 +36,8 @@ const CVDisplay = ({ info, education, experience }) => {
             </div>
             <p className="position">{experience.position}</p>
             <ul className="responsibilities">
-              {experience.responsibilities?.split("\n").map((point, i) => (
-                <li key={i}>{point}</li>
+              {experience.responsibilities?.map((responsibility, i) => (
+                <li key={i}>{responsibility}</li>
               ))}
             </ul>
           </div>

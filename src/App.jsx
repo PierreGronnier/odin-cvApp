@@ -22,7 +22,7 @@ const App = () => {
     experience: {
       company: "Tech Solutions Inc.",
       position: "Full Stack Developer",
-      responsibilities: "Developing web applications, managing databases",
+      responsibilities: ["Developing web applications", "Managing databases"],
       from: "2020",
       to: "2023",
     },
@@ -45,7 +45,7 @@ const App = () => {
     setExperience({
       company: "",
       position: "",
-      responsibilities: "",
+      responsibilities: [],
       from: "",
       to: "",
     });
