@@ -1,6 +1,7 @@
 # CV Application
 
 This project is an exercise as part of The Odin Project curriculum. You can find more details about the assignment [here](https://www.theodinproject.com/lessons/node-path-react-new-cv-application).
+You can have a preview of the app [here](https://odin-cvapp.netlify.app/)
 
 ## Overview
 
