@@ -1,0 +1,35 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  background: #223044;
+  margin-top: auto;
+  font-family: "Arial", sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+}
+
+.footer-text {
+  color: #ffffff;
+  font-size: 1.3rem;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.github-link {
+  transition: transform 0.3s ease;
+}
+
+.github-link:hover {
+  transform: scale(1.3);
+}
+
+.github-icon {
+  margin-left: 1rem;
+  width: 35px;
+  height: 35px;
+  filter: brightness(0) invert(1);
+}
