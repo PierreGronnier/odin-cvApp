@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/CVDisplay.css";
 
-const CVDisplay = ({ info, education, experience }) => {
+const CVDisplay = ({ info, educations, experiences }) => {
   return (
     <div className="cv-display">
       <header className="cv-header">
@@ -14,33 +14,39 @@ const CVDisplay = ({ info, education, experience }) => {
       <section className="cv-section">
         <h2>Education</h2>
         <div className="section-content">
-          <div className="entry">
-            <div className="entry-header">
-              <h3>{education.school}</h3>
-              <span className="date">{education.date}</span>
+          {educations.map((education, index) => (
+            <div key={index} className="entry">
+              <div className="entry-header">
+                <h3>{education.school}</h3>
+                <span className="date">
+                  {education.startDate} - {education.endDate}
+                </span>
+              </div>
+              <p className="degree">{education.study}</p>
             </div>
-            <p className="degree">{education.study}</p>
-          </div>
+          ))}
         </div>
       </section>
 
       <section className="cv-section">
         <h2>Professional Experience</h2>
         <div className="section-content">
-          <div className="entry">
-            <div className="entry-header">
-              <h3>{experience.company}</h3>
-              <span className="date">
-                {experience.from} - {experience.to}
-              </span>
+          {experiences.map((experience, index) => (
+            <div key={index} className="entry">
+              <div className="entry-header">
+                <h3>{experience.company}</h3>
+                <span className="date">
+                  {experience.from} - {experience.to}
+                </span>
+              </div>
+              <p className="position">{experience.position}</p>
+              <ul className="responsibilities">
+                {experience.responsibilities?.map((responsibility, i) => (
+                  <li key={i}>{responsibility}</li>
+                ))}
+              </ul>
             </div>
-            <p className="position">{experience.position}</p>
-            <ul className="responsibilities">
-              {experience.responsibilities?.map((responsibility, i) => (
-                <li key={i}>{responsibility}</li>
-              ))}
-            </ul>
-          </div>
+          ))}
         </div>
       </section>
     </div>

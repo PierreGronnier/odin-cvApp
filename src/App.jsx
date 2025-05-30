@@ -14,23 +14,63 @@ const App = () => {
       phone: "555-1234",
       address: "4211 Spenard Rd, Anchorage, Alaska",
     },
-    education: {
-      school: "University of California",
-      study: "Computer Science",
-      date: "2015 - 2019",
-    },
-    experience: {
-      company: "Tech Solutions Inc.",
-      position: "Full Stack Developer",
-      responsibilities: ["Developing web applications", "Managing databases"],
-      from: "2020",
-      to: "2023",
-    },
+    educations: [
+      {
+        school: "University of California",
+        study: "Computer Science",
+        startDate: "2015",
+        endDate: "2019",
+      },
+      {
+        school: "Massachusetts Institute of Technology",
+        study: "Business Administration",
+        startDate: "2012",
+        endDate: "2015",
+      },
+    ],
+    experiences: [
+      {
+        company: "Tech Solutions Inc.",
+        position: "Full Stack Developer",
+        responsibilities: [
+          "Developing web applications",
+          "Managing databases",
+          "Collaborating with cross-functional teams",
+          "Implementing security protocols",
+        ],
+        from: "2020",
+        to: "2023",
+      },
+      {
+        company: "Innovatech Corp.",
+        position: "Software Engineer",
+        responsibilities: [
+          "Designing software solutions",
+          "Testing and debugging",
+          "Writing technical documentation",
+          "Mentoring junior developers",
+        ],
+        from: "2018",
+        to: "2020",
+      },
+      {
+        company: "Digital Creations Ltd.",
+        position: "Frontend Developer",
+        responsibilities: [
+          "Creating responsive web designs",
+          "Optimizing web performance",
+          "Working with UX/UI designers",
+          "Conducting code reviews",
+        ],
+        from: "2016",
+        to: "2018",
+      },
+    ],
   };
 
   const [info, setInfo] = useState(DEFAULT_INFO.general);
-  const [education, setEducation] = useState(DEFAULT_INFO.education);
-  const [experience, setExperience] = useState(DEFAULT_INFO.experience);
+  const [educations, setEducations] = useState(DEFAULT_INFO.educations);
+  const [experiences, setExperiences] = useState(DEFAULT_INFO.experiences);
   const [expandedSection, setExpandedSection] = useState("general");
   const [showModal, setShowModal] = useState(false);
   const [modalAction, setModalAction] = useState(null);
@@ -41,21 +81,17 @@ const App = () => {
 
   const resetAllData = () => {
     setInfo({ name: "", email: "", phone: "", address: "" });
-    setEducation({ school: "", study: "", date: "" });
-    setExperience({
-      company: "",
-      position: "",
-      responsibilities: [],
-      from: "",
-      to: "",
-    });
+    setEducations([{ school: "", study: "", startDate: "", endDate: "" }]);
+    setExperiences([
+      { company: "", position: "", responsibilities: [], from: "", to: "" },
+    ]);
     setShowModal(false);
   };
 
   const resetToDefaultData = () => {
     setInfo(DEFAULT_INFO.general);
-    setEducation(DEFAULT_INFO.education);
-    setExperience(DEFAULT_INFO.experience);
+    setEducations(DEFAULT_INFO.educations);
+    setExperiences(DEFAULT_INFO.experiences);
     setShowModal(false);
   };
 
@@ -82,36 +118,40 @@ const App = () => {
       <div className="form-container">
         <GeneralInfo
           info={info}
-          onInfoChange={setInfo}
+          setInfo={setInfo}
           isExpanded={expandedSection === "general"}
           toggleExpanded={() => toggleSection("general")}
         />
         <Education
-          education={education}
-          onEducationChange={setEducation}
+          educations={educations}
+          setEducations={setEducations}
           isExpanded={expandedSection === "education"}
           toggleExpanded={() => toggleSection("education")}
         />
         <PracticalExperience
-          experience={experience}
-          onExperienceChange={setExperience}
+          experiences={experiences}
+          setExperiences={setExperiences}
           isExpanded={expandedSection === "experience"}
           toggleExpanded={() => toggleSection("experience")}
         />
-        <div className="button-flex">
-          <button className="reset-button" onClick={handleClearAll}>
+        <div className="main-button-container">
+          <button className="clear-all-button" onClick={handleClearAll}>
             CLEAR ALL
           </button>
-          <button className="reset-button" onClick={handleResetCV}>
+          <button className="reset-cv-button" onClick={handleResetCV}>
             RESET CV
           </button>
-          <button className="print-button" onClick={() => window.print()}>
+          <button className="print-cv-button" onClick={() => window.print()}>
             PRINT CV
           </button>
         </div>
       </div>
       <div className="preview-container" id="cv-to-print">
-        <CVDisplay info={info} education={education} experience={experience} />
+        <CVDisplay
+          info={info}
+          educations={educations}
+          experiences={experiences}
+        />
       </div>
       {showModal && (
         <Modal

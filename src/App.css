@@ -1,14 +1,14 @@
 .App {
   display: flex;
-  justify-content: center;
-  padding: 2rem;
-  gap: 2rem;
-  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 1.5rem;
 }
 
 .form-container {
-  flex: 1;
-  width: 50%;
+  width: 100%;
+  margin-top: 1rem;
   max-width: 700px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
@@ -17,49 +17,71 @@
 }
 
 .preview-container {
-  flex: 1;
-  width: 50%;
+  width: 100%;
   max-width: 700px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  padding: 1.5rem;
   color: #333;
-  min-height: 90vh;
+  margin-top: 1rem;
 }
 
-.reset-button {
-  margin-top: 1.5rem;
+.main-button-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.clear-all-button,
+.reset-cv-button,
+.print-cv-button {
   padding: 0.8rem 1.5rem;
-  background-color: #ff6b6b;
-  color: white;
   font-weight: bold;
   border: none;
   border-radius: 8px;
+  cursor: pointer;
 }
 
-.reset-button:hover {
+.clear-all-button {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.clear-all-button:hover {
   background-color: #fa5252;
 }
 
-.print-button {
-  margin-top: 1.5rem;
-  padding: 0.8rem 1.5rem;
-  background-color: #0aaa2d;
+.reset-cv-button {
+  background-color: #4dabf7;
   color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
 }
 
-.print-button:hover {
+.reset-cv-button:hover {
+  background-color: #339af0;
+}
+
+.print-cv-button {
+  background-color: #0aaa2d;
+  color: white;
+}
+
+.print-cv-button:hover {
   background-color: #046419;
 }
 
-.button-flex {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
+@media (min-width: 768px) {
+  .App {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .form-container,
+  .preview-container {
+    width: 48%;
+  }
 }
 
 @media print {
